@@ -1,8 +1,15 @@
 <?php
 
-$routeArray = [
-    "home",
-];
+$dirArray = scandir("../app/controllers");
+
+$routeArray = array();
+
+
+foreach ($dirArray as $file){
+    if(!($file == "." || $file == "..")){
+        $routeArray[] = explode("Controller", $file)[0];
+    }
+}
 
 $route = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_URL);
 $route = $route ?? "home";
