@@ -1,4 +1,3 @@
-<?php 
- echo 'serveur mis en place' 
- ?> 
- <h1>Test</h1>
+<?php
+
+require ("../route/web.php");
