@@ -6,7 +6,7 @@ $filterURI = filter_input(INPUT_GET, "action", FILTER_SANITIZE_FULL_SPECIAL_CHAR
 
 ob_start();
 if (!isset($_GET["action"])) {
-    header("Location: index.php?action=cart");
+    header("Location: index.php?action=product");
 } else {
     require_once "../ressources/views/layouts/main.tpl.php";
 }
