@@ -1,3 +1,4 @@
 <?php
-echo "home controller";
+$articles = selectAllProduct($pdo);
 require ("../ressources/views/home.tpl.php");
+
