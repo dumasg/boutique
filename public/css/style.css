@@ -14,6 +14,75 @@ body {
 }
 
 .show__hero {
-  background: red;
+  align-items: center;
+  display: flex;
   height: 150px;
+  justify-content: center;
+  width: 100%;
+}
+.show__hero > h1 {
+  color: white;
+  position: absolute;
+}
+.show__hero > img {
+  height: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: inherit;
+}
+.show__product {
+  padding: 0 50px;
+}
+.show__product h2 {
+  align-items: center;
+  display: flex;
+  height: 50px;
+}
+.show__product_content {
+  display: flex;
+}
+.show__product_picture {
+  overflow: hidden;
+  position: relative;
+  width: 37.5%;
+}
+.show__product_picture img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.show__product_picture::before {
+  content: "";
+  display: flex;
+  padding-top: 100%;
+}
+.show__product_description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 62.5%;
+}
+.show__product_description > p {
+  text-align: justify;
+  padding: 0 0 0 25px;
+}
+.show__product_price {
+  display: flex;
+  justify-content: space-between;
+}
+.show__product_price > p {
+  align-items: flex-end;
+  display: flex;
+  padding: 0 0 0 25px;
+}
+.show__product_price form input {
+  background: black;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  height: 37.5px;
+  width: 125px;
 }/*# sourceMappingURL=style.css.map */

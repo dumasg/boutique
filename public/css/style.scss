@@ -15,8 +15,92 @@ body {
 }
 
 .show {
+    $imageSize: 37.5%;
     &__hero {
-        background: red;
+        align-items: center;
+            display: flex;
         height: 150px;
-    }
+        justify-content: center;
+            width: 100%;
+        
+            >h1 {
+                color: white;
+                position: absolute;
+            }
+        
+            >img {
+                height: inherit;
+                object-fit: cover;
+                width: inherit;
+            }
+        }
+        
+        &__product {
+            padding: 0 50px;
+        
+            h2 {
+                align-items: center;
+                display: flex;
+                height: 50px;
+            }
+        
+            &_content {
+                display: flex;
+            }
+        
+            &_picture {
+                overflow: hidden;
+                position: relative;
+                width: $imageSize;
+        
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                }
+        
+                &::before {
+                    content: "";
+                    display: flex;
+                    padding-top: 100%;
+                }
+            }
+        
+            &_description {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: calc(100% - $imageSize);
+        
+                >p {
+                    text-align: justify;
+                    padding: 0 0 0 25px;
+                }
+            }
+        
+            &_price {
+                display: flex;
+                justify-content: space-between;
+        
+                >p {
+                    align-items: flex-end;
+                    display: flex;
+                    padding: 0 0 0 25px;
+                }
+        
+                form {
+        
+                    input {
+                        background: black;
+                        border: none;
+                        border-radius: 50px;
+                        color: white;
+                        height: 37.5px;
+                        width: 125px;
+                    }
+                }
+            }
+                }
 }
