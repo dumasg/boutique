@@ -8,7 +8,7 @@ function selectAllProduct (PDO $pdo){
 }
 
 function selectArticle(PDO $pdo, $idArticle){
-    $querySelectArticle = "SELECT name, description, path_img, price_ttc, price_ht
+    $querySelectArticle = "SELECT id, name, description, path_img, price_ttc, price_ht
     FROM products
     WHERE id = :id";
     PDOStatement : $stmt = $pdo->prepare($querySelectArticle);

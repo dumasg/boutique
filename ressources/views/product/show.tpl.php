@@ -19,6 +19,7 @@
                     <label for="qte">Quantité</label>
                     <input type="number" name="qte" id="qte">
                 </div>
+                <input type="hidden" name="id" id="id" value="<?= $article['id'] ?>">
                 <div>
                     <button class="btn btn-primary" type="submit">Ajouter au panier</button>
             </form>
