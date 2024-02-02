@@ -3,7 +3,7 @@
     <div class="container_articles">
         <?php foreach ($articles as $key => $value) { ?>
             <div class="card border">
-                <a href="">
+                <a href="?action=product&id=<?= $value['id'] ?>">
                     <div class="card_img">
                         <img src="<?= $value['path_img'] ?>" alt="">
                     </div>
