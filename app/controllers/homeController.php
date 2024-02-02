@@ -1,6 +1,9 @@
 <?php
 global $pdo;
-echo 'Bienvenue sur la page de la boutique';
+require  ("../app/persistences/productsData.php");
+
 //fonction d'affichage des articles
-$product = productList($pdo);
+$products = productList($pdo);
+
 require ("../ressources/views/home.tpl.php");
+require ("../css/style.css");

@@ -1,6 +1,6 @@
 <form action="index.php?action=cart" method="post" class="needs-validation">
 
-    <div class="container border rounded-3 bg-light bg-opacity-75 gy-3 my-5" id="formul">
+    <div class="container border rounded-3 bg-light bg-opacity-75 gy-3 my-5" id="formule">
         <div class="container">
             <div class="p-3 text-primary-emphasis text-center mt-3 mb-5">
             </div>

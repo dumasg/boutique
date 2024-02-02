@@ -6,9 +6,9 @@ global $productsId;
 
 function productList($pdo)
 {
-    $listProduct = "SELECT name, description
+    $listProduct = "SELECT name, path_img
         FROM products
-        ORDER BY name asc";
+        ORDER BY 'name' asc";
     $resultListProduct = $pdo->query($listProduct);
     return $resultListProduct->fetchAll(PDO::FETCH_ASSOC);
 }
