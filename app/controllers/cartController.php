@@ -1,7 +1,7 @@
 <?php
 
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $args = array(
         "id" => FILTER_SANITIZE_NUMBER_INT,
@@ -17,4 +17,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     header("Location: /?action=product&id=" . $dataArticle['id']);
     exit();
+} else {
+
+    if (isset($_SESSION['cart'])) {
+        $cart = array();
+        foreach ($_SESSION['cart'] as $key => $product) {
+            $cart[] = cartAllProduct($pdo, $product['id']);
+            $total = $cart[$key]['price_ttc'] * (int)$product['qte'];
+            $cart[$key] += [
+                "qte" => $product['qte'],
+                "total" => $total
+            ];
+        }
+    }
+    require("../ressources/views/cart/cart.tpl.php");
 }
+

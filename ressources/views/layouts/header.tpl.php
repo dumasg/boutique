@@ -32,9 +32,9 @@
                 <form class="d-flex" role="search">
                     <button class="btn btn-primary me-3" type="submit">Connexion</button>
                 </form>
-                <form class="d-flex" role="search">
-                    <button class="btn btn-success" type="submit">Inscription</button>
-                </form>
+
+                <button onclick="window.location.href='?action=cart'" class="btn btn-success" type="submit">Panier</button>
+
             </div>
         </div>
     </nav>

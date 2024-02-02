@@ -16,3 +16,23 @@ function selectArticle(PDO $pdo, $idArticle){
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
+
+function cartAllProduct(PDO $pdo, $idProduct){
+    $queryCallDataProduct = "
+    SELECT id, name, path_img, price_ttc
+    FROM products
+    WHERE id =:id";
+    PDOStatement : $stmt = $pdo->prepare($queryCallDataProduct);
+    $stmt->execute(['id' => $idProduct]);
+    $result = array();
+    foreach ($stmt as $row){
+        $result = [
+            "id" => $row['id'],
+            "name" => $row['name'],
+            "path_img" => $row['path_img'],
+            "price_ttc" => $row['price_ttc']
+        ];
+    }
+    //$result = $stmt->fetchAll();
+    return $result;
+}
