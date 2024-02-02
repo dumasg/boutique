@@ -1,4 +1,4 @@
 <?php
 $paths = [
-    "product" => "../ressources/views/product/show.tpl.php",
+    "product" => "../app/controllers/productController.php",
 ];
