@@ -3,6 +3,10 @@
     margin: 0 auto;
 }
 
+.title_page{
+    margin: 50px 0;
+}
+
 .container_articles{
     display: flex;
     flex-direction: row;
@@ -35,4 +39,12 @@
             margin: 0px !important;
         }
     }
+}
+
+a, a:visited, a:hover{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    cursor: pointer;
 }
