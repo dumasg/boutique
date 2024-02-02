@@ -1,0 +1,75 @@
+h1 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    font-size: xx-large;
+}
+h2 {
+    font-weight: bold;
+    color: blue;
+    font-family: "Fira Code";
+    font-size: x-large;
+}
+nav {
+    border-top: blue 2px solid;
+    border-bottom: blue 2px solid;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+footer {
+    border-top: blue 2px solid;
+    margin-top: 20px;
+    text-align: center;
+}
+/* == page produit == */
+.productTopBox {
+    margin: 20px;
+}
+.productDescription, .productCard {
+    display: flex;
+}
+.productDescription {
+    flex-direction: column;
+    font-size: large;
+}
+.productCard img {
+    width: 300px;
+    height: 300px;
+    margin-right: 20px;
+}
+.priceAndButton {
+    font-size: x-large;
+    color: red;
+    margin-top: 50px;
+    display: flex;
+    gap: 50px;
+}
+.priceAndButton button {
+    background: yellow;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: large;
+}
+/* == home page == */
+.smallProductCard img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+.smallProductCard {
+    width: 150px;
+    font-weight: bold;
+    color: blue;
+}
+.productListTopBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin: 50px;
+}
+#lastProductsTitle {
+    color: black;
+    margin-left: 50px;
+}
