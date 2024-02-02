@@ -1,7 +1,3 @@
-<div class="show__hero">
-    <h1>Ma boutique</h1>
-    <img src="../img/andras-vas-Bd7gNnWJBkU-unsplash.jpg" alt="Laptop" />
-</div>
 <div class="home__product">
     <h2>Les derniers produits</h2>
     <div class="home__product_grid">
