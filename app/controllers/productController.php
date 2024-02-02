@@ -2,7 +2,7 @@
 require_once "../app/persistences/productData.php";
 
 try {
-    $products = getProduct($db);
+    $product = getProduct($db, $_GET["id"]);
 } catch (Exception $e) {
     echo 'Exception reçue : ',  $e->getMessage(), "\n";
 }
