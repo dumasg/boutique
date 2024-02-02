@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $dirArray = scandir("../app/controllers");
 
 $routeArray = array();
