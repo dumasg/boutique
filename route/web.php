@@ -20,6 +20,7 @@ if (array_search($route, $routeArray) !== false){
     $i = array_search($route, $routeArray);
     require ("../config/database.php");
     require ("../app/persistences/boutiquePostData.php");
+    require ("../app/persistences/command.php");
     require ("../ressources/views/layouts/header.tpl.php");
     require("../app/controllers/" . $routeArray[$i] . "Controller.php");
     require ("../ressources/views/layouts/footer.tpl.php");

@@ -1,5 +1,5 @@
 <?php
-    $totalOrder = 0;
+$totalOrder = 0;
 ?>
 <div class="container">
     <div class="containerCart">
@@ -36,10 +36,11 @@
                     <div class="grid_item"><p><?= $product['name'] ?></p></div>
                     <div class="grid_item"><span><?= $product['price_ttc'] ?> €</span></div>
                     <div class="grid_item">
-                        <input type="number" name="<?= "id=".$product['id']?>" value="<?= $product['qte'] ?>">
+                        <input type="number" name="<?= "id=" . $product['id'] ?>" value="<?= $product['qte'] ?>">
                     </div>
                     <div class="grid_item"><span><?= $product['total'] ?> €</span></div>
-                    <div class="grid_item"><a href="?action=cart&id=<?= $product['id'] ?>&delete=true">Supprimer</a></div>
+                    <div class="grid_item"><a href="?action=cart&id=<?= $product['id'] ?>&delete=true">Supprimer</a>
+                    </div>
 
                 </div>
                 <?php
@@ -64,10 +65,14 @@
                 </div>
             </div>
             <div class="container_btn_delete_cart">
-                <button type="reset" onclick="window.location.href='?action=deleteCard'" class="btn btn-danger">Supprimer mon panier
+                <button type="reset" onclick="window.location.href='?action=deleteCard'" class="btn btn-danger">
+                    Supprimer mon panier
                 </button>
                 <button type="submit" class="btn btn-primary">Mettre à jour mon panier
                 </button>
             </div>
         </form>
+        <div>
+            <button class="btn btn-success" onclick="window.location.href='?action=command'">Commander !</button>
+        </div>
     </div>
