@@ -1,13 +1,19 @@
+<?php session_start(); ?>
 <?php
-require ("../ressources/view/product/show.php");
-require ("../app/persistances/productsData.php");
-//require "../public/css/products.css";
+echo 'productsController';
+require  ("../app/persistences/productsData.php");
 
 global $pdo;
 global $productsId;
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET')
-    selectedProduct($pdo, $productsId);
-header('location : /?action=home');
+$productId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+$product = getProduct($pdo, $productId);
 
-require ('../ressources/views/layouts/footer.php');
+require ("../ressources/views/product/show.php");
+require ("../public/css/style.css");  //affiche le contenu du fichier css mais ne l'applique pas
+?>
+
+
+
+
+

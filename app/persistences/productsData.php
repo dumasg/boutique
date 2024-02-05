@@ -1,4 +1,6 @@
+<?php session_start(); ?>
 <?php
+echo 'productsData';
 global $pdo;
 global $productsId;
 
@@ -14,12 +16,10 @@ function productList($pdo)
 }
 
 //afficher un produit
-function selectedProduct($pdo,$productsId)
+function getProduct(PDO $pdo, $id)
 {
-    $selectProduct = "SELECT *
-        FROM products
-        INNER JOIN tva on products.id = tva.id
-        WHERE products.id = $productsId";
-    $resultSelectProduct = $pdo->query($selectProduct);
-    return $resultSelectProduct->fetchAll(PDO::FETCH_ASSOC);
+    $query = "SELECT *
+              FROM products
+              WHERE id = " . $id;
+    return $pdo->query($query)->fetch(PDO::FETCH_ASSOC);
 }

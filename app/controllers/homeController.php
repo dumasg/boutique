@@ -1,4 +1,6 @@
+<?php session_start(); ?>
 <?php
+echo 'homeController';
 global $pdo;
 require  ("../app/persistences/productsData.php");
 
@@ -6,4 +8,4 @@ require  ("../app/persistences/productsData.php");
 $products = productList($pdo);
 
 require ("../ressources/views/home.tpl.php");
-require ("../css/style.css");
+require ("../public/css/style.css");

@@ -1,4 +1,10 @@
-<?php
+<?php // demarrer la session
+session_start();
+//stocker des données de session
+$_session["email"] = "X"; //valeur de la variable à modifier
+$_session["passewords"] = "Y"; //valeur de la variable à modifier
+
+
 include '../config/database.php';
 require ("../ressources/views/layouts/header.php");
 

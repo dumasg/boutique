@@ -1,0 +1,82 @@
+<?php echo 'style.css'; ?>
+
+img {
+    height: 30px;
+    width: 30px;
+}
+
+p {
+    color: #002fff;
+}
+h2 {
+    text-decoration-color: #002fff;
+}
+h1 {
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("/var/www/boutique/public/img/product/banniere.jpg");
+    text-align: center;
+    margin-top: 10px;
+    height: 90px;
+    }
+    li {
+    display: inline;
+    justify-content: space-evenly;
+    text-decoration: none;
+    }
+    a {
+    color: rgb(108, 86, 236);
+}
+ul {
+    list-style-type: none;
+    padding: 15px;
+    overflow: hidden;
+    background-color: #d9e9f0;
+}
+section {
+    display: flex;
+    border: solid rgb(129, 126, 126);
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 150px;
+    width: 250px;
+
+    margin-bottom: 5px;
+}
+h3 {
+    color: blue;
+}
+img {
+    height: 90px;
+    width: 90px;
+    border: solid rgb(129, 126, 126);
+    flex-wrap: wrap;
+}
+
+/*affichage un produit*/
+/*h3 {*/
+
+/*    color: blue;*/
+/*    text-align: center;*/
+/*}*/
+/*section {*/
+/*    display: flex;*/
+/*    border: solid rgb(129, 126, 126);*/
+/*    align-items: center;*/
+/*    height: 300px;*/
+/*    width: 800px;*/
+/*    margin-bottom: 5px;*/
+/*}*/
+/*img {*/
+/*    height: 180px;*/
+/*    width: 180px;*/
+/*    margin-left: 10px;*/
+/*    margin-right: 10px;*/
+/*    border: solid rgb(231, 229, 229);*/
+/*    flex-wrap: wrap;*/
+/*}*/
+/*div{*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*}*/
