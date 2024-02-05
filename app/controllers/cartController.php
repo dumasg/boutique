@@ -25,6 +25,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: /?action=product&id=" . $dataArticle['id']);
     exit();
 } else {
+    if (isset($_GET['delete'])){
+        $args = array(
+            "action" => FILTER_SANITIZE_URL,
+            "id" => FILTER_SANITIZE_NUMBER_INT,
+            "delete" => FILTER_SANITIZE_SPECIAL_CHARS
+        );
+
+        $dataForDeleting = filter_input_array(INPUT_GET, $args);
+        var_dump($dataForDeleting);
+
+        for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+            var_dump($_SESSION['cart'][$i]);
+            if ($_SESSION['cart'][$i]['id'] == $dataForDeleting['id']){
+                array_splice($_SESSION['cart'], $i, 1);
+                header("Location: /");
+                exit();
+            }
+        }
+
+    }
+
 
     if (isset($_SESSION['cart'])) {
         $cart = array();
@@ -62,4 +83,8 @@ function mergeDoublon (array $dataArticle){
             $product['qte'] += (int)$dataArticle['qte'];
         }
     }
+}
+
+function deleteProductCart(){
+
 }

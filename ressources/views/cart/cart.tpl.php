@@ -24,6 +24,9 @@
                 <div class="grid_item grid_item_container_title">
                     <p class="grid_item_title">Total</p>
                 </div>
+                <div class="grid_item grid_item_container_title">
+                    <p class="grid_item_title"></p>
+                </div>
             </div>
             <?php foreach ($cart as $key => $product) { ?>
                 <div class="grid_row">
@@ -36,6 +39,8 @@
                         <input type="number" name="<?= "id=".$product['id']?>" value="<?= $product['qte'] ?>">
                     </div>
                     <div class="grid_item"><span><?= $product['total'] ?> €</span></div>
+                    <div class="grid_item"><a href="?action=cart&id=<?= $product['id'] ?>&delete=true">Supprimer</a></div>
+
                 </div>
                 <?php
                 $totalOrder += $product['total'];

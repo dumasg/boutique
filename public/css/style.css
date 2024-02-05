@@ -128,7 +128,7 @@ a:hover {
 
 .grid_row, .grid_row_total{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     height: 150px;
     margin-top: 30px;
 }
