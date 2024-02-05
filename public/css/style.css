@@ -69,7 +69,44 @@ footer {
     gap: 50px;
     margin: 50px;
 }
-#lastProductsTitle {
+#lastProductsTitle, #cartTitle {
     color: black;
     margin-left: 50px;
+}
+
+/* === CART ===*/
+.cartListTopBox {
+    display: flex;
+    flex-direction: column;
+    /*flex-wrap: wrap;*/
+    gap: 50px;
+    margin: 50px;
+}
+.largeProductCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.largeProductCard img {
+    width: 4em;
+    height: 4em;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap : 20px;
+}
+.imgAndName {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap : 20px;
 }

@@ -22,3 +22,20 @@ function getLastProducts(PDO $pdo, $number)
     /* Returns an array of product items, so use fetchAll : */
     return $pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function getCartProducts(PDO $pdo, $prodIdList)
+{
+    $idListString = '(' . implode(",", $prodIdList) . ')';
+
+    $query = "SELECT id, name, path_img, price_ttc
+                FROM products
+                WHERE id IN $idListString;" ;
+
+    /* Returns an array of product items, so use fetchAll : */
+    return $pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function productTotalsCart()
+{
+
+}

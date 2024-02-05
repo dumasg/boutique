@@ -1,9 +1,11 @@
 <?php
 
+
 include '../config/database.php';
 
 $routes = [
-    "product" => '../app/controllers/showController.php',
+    "product"   => '../app/controllers/showController.php',
+    "cart"      => '../app/controllers/cartController.php',
 ];
 
 $p = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
