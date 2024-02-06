@@ -4,9 +4,10 @@ require_once "../app/persistences/cart.php";
 
 try {
     initCart();
-    $_SESSION["cart"] = fakeCart($db, 1);
+    // $_SESSION["cart"] = fakeCart($db, 1);
     $_SESSION["totalCart"] = totalCart($db, $_SESSION["cart"]);
     $productsCart = getAllProducts($db);
+    addProductCart($_GET["id"], $_POST["quantity"]);
 } catch (Exception $e) {
     echo 'Exception reçue : ',  $e->getMessage(), "\n";
 }
