@@ -2,9 +2,14 @@
 function initCart()
 {
     session_start();
-    if (! isset($_SESSION['cart'])) {
-         $_SESSION['cart'] = null;
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = null;
     }
+}
+
+function resetCart()
+{
+    $_SESSION['cart'] = null;
 }
 
 function fakeCart()
@@ -14,14 +19,14 @@ function fakeCart()
         3 => 1,
         5 => 2,
         9 => 1
-    ] ;
+    ];
 }
 
 function totalCart($products, $cartList)
 {
     $total = 0;
     foreach ($products as $product) {
-           $total += $product['price_ttc'] * $cartList[$product['id']];
+        $total += $product['price_ttc'] * $cartList[$product['id']];
     }
     return [$total, sizeof($products)];
 }
@@ -33,5 +38,15 @@ function addProductCart($id)
         $_SESSION['cart'][$id]++;
     } else {
         $_SESSION['cart'][$id] = 1;
+    }
+}
+
+function updateProductCart($newCart)
+{
+    $_SESSION['cart'] = $newCart;
+    foreach ($newCart as $id => $quantity) {
+        if ($quantity == 0) {
+            unset($_SESSION['cart'][$id]);
+        }
     }
 }
