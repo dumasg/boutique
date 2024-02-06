@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <?php
 echo 'homeController';
 global $pdo;

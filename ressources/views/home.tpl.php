@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <h2>Nos produits</h2>
 <section>
 <?php foreach ($products as $oneProduct){?>

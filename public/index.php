@@ -1,10 +1,4 @@
-<?php // demarrer la session
-session_start();
-//stocker des données de session
-$_session["email"] = "X"; //valeur de la variable à modifier
-$_session["passewords"] = "Y"; //valeur de la variable à modifier
-
-
+<?php
 include '../config/database.php';
 require ("../ressources/views/layouts/header.php");
 
@@ -12,6 +6,7 @@ require ("../ressources/views/layouts/header.php");
 $routes = [
     'home' => "../app/controllers/homeController.php",
     'products' => '../app/controllers/productsController.php',
+    'cart' => '../app/controllers/cartController.php',
 ];
 
 $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
