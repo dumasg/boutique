@@ -1,41 +1,46 @@
 <?php
 function initCart()
 {
+    if (!isset($_SESSION["cart"])) {
+        $_SESSION["cart"] = array();
+    }
+
+    if (!isset($_SESSION["totalCart"])) {
+        $_SESSION["totalCart"] = array();
+    }
 }
 
-function fakeCart()
+function fakeCart($db, $int)
 {
-    $arr = array(
-        array(
-            "name" => "iPhone",
-            "price_ht" => "600",
-            "quantity" => "1",
-            "price_tva" => "750",
-            'path_img' => "img/product/iphone-xr.png"
-        ),
+    $query = "SELECT p.id, po.quantity
+    FROM products as p
+    INNER JOIN products_orders as po
+    ON po.products_id = p.id
+    WHERE po.orders_id = '$int'";
 
-        array(
-            "name" => "iPhone 25",
-            "price_ht" => "7500",
-            "quantity" => "98",
-            "price_tva" => "10000",
-            'path_img' => "img/product/iphone-xr.png"
-        )
-    );
+    $arr = array();
+
+    foreach ($db->query($query) as $data) {
+        array_push($arr, $data);
+    }
 
     return $arr;
 }
 
-function totalCart($products)
+function totalCart($db, $session)
 {
-    $arr = [
-        "quantity" => null,
-        "total_price" => null,
-    ];
+    $query = "SELECT p.id, p.price_ttc
+    FROM products as p";
 
-    foreach ($products as $data) {
-        $arr["quantity"] = $arr["quantity"] + $data["quantity"];
-        $arr["total_price"] = $arr["total_price"] + $data["price_tva"];
+    $arr = [];
+
+    foreach ($db->query($query) as $data) {
+        foreach ($session as $value) {
+            if ($data["id"] === $value["id"]) {
+                $arr["quantity"] += $value["quantity"];
+                $arr["price_ttc"] += ($data["price_ttc"] * $value["quantity"]);
+            }
+        }
     }
 
     return $arr;
