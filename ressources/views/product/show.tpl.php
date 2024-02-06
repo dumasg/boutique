@@ -17,7 +17,7 @@
                     <p><?= $products[$i]["description"] ?></p>
                     <div class="show__product_price">
                         <p><?= $products[$i]["price_ttc"] ?>€ TTC</p>
-                        <form action="index.php?action=cart" method="post">
+                        <form action="index.php?action=cart&id=<?= $_GET["id"] ?>" method="post">
                             <input type="number" id="quantity" name="quantity" min="1" value="1" />
                             <input type="submit" value="ADD CART" />
                         </form>
