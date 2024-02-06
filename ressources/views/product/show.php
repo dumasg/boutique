@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-<?php echo 'show.php';
 global $oneProduct; ?>
 <body>
 

@@ -1,4 +1,5 @@
 <?php
+echo 'cart.php';
 function initCart()
 {
     session_start();
@@ -22,14 +23,10 @@ function fakeCart()
     ];
 }
 
-//fonction "totalCart" qui renvoie un tableau avec le total en € du panier et le nombre de produits
-function totalCart()
+function totalCart($pdo)
 {
     $_SESSION['cart'] = [ //tableau avec le total à afficher dans le header
 
     ];
 }
 
-//informations contenues dans le panier
-//$_SESSION['cart']['id'] = array();
-//$_SESSION['cart']['quantité'] = array();

@@ -1,16 +1,15 @@
 <h2>Nos produits</h2>
 <section>
-<?php foreach ($products as $oneProduct){?>
-    <h3> <?=$oneProduct ['name']?></h3>
-
-        <img src="<?=$oneProduct ['path_img']?>" alt="text alternatif image"/>
-
-    <div id="submit">
-        <button type="submit" value="détail">Voir le détail</button>
-    </div>
-<?php }; ?>
+    <?php foreach ($products as $oneProduct): ?>
+        <article>
+            <h3> <?= $oneProduct ['name'] ?></h3>
+            <img src="<?= $oneProduct ['path_img'] ?>" alt="text alternatif image"/>
+            <div id="submit">
+                <button value="détail"><a href="/index.php?action=product&id=<?=$oneProduct['id']?>"> Voir le détail</a></button>
+            </div>
+        </article>
+    <?php endforeach; ?>
 </section>
-
 
 
 <!--<main>-->
