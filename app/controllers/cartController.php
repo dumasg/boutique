@@ -12,6 +12,7 @@ $cartList = $_SESSION['cart'] ;
 
 $ids = array_keys($cartList);
 $products = getCartProducts($pdo, $ids);
+$cartTotal = totalCart($products, $cartList); // array : total(€), nbProducts
 
 // $totals = productTotalsCart(); // ===================== CONTINUER ICI
 // returns array of (id, name, path_img, price_ttc)

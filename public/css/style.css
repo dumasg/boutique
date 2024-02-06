@@ -4,12 +4,14 @@ h1 {
     text-align: center;
     font-size: xx-large;
 }
+
 h2 {
     font-weight: bold;
     color: blue;
     font-family: "Fira Code";
     font-size: x-large;
 }
+
 nav {
     border-top: blue 2px solid;
     border-bottom: blue 2px solid;
@@ -17,27 +19,33 @@ nav {
     padding-bottom: 20px;
     text-align: center;
 }
+
 footer {
     border-top: blue 2px solid;
     margin-top: 20px;
     text-align: center;
 }
+
 /* == page produit == */
 .productTopBox {
     margin: 20px;
 }
+
 .productDescription, .productCard {
     display: flex;
 }
+
 .productDescription {
     flex-direction: column;
     font-size: large;
 }
+
 .productCard img {
     width: 300px;
     height: 300px;
     margin-right: 20px;
 }
+
 .priceAndButton {
     font-size: x-large;
     color: red;
@@ -45,23 +53,27 @@ footer {
     display: flex;
     gap: 50px;
 }
-.priceAndButton button {
+
+button {
     background: yellow;
     padding: 10px;
     border-radius: 10px;
     font-size: large;
 }
+
 /* == home page == */
 .smallProductCard img {
     width: 150px;
     height: 150px;
     margin-bottom: 20px;
 }
+
 .smallProductCard {
     width: 150px;
     font-weight: bold;
     color: blue;
 }
+
 .productListTopBox {
     display: flex;
     flex-direction: row;
@@ -69,6 +81,7 @@ footer {
     gap: 50px;
     margin: 50px;
 }
+
 #lastProductsTitle, #cartTitle {
     color: black;
     margin-left: 50px;
@@ -79,15 +92,20 @@ footer {
     display: flex;
     flex-direction: column;
     /*flex-wrap: wrap;*/
-    gap: 50px;
-    margin: 50px;
+    /*gap: 50px;*/
+    margin-right : 50px;
+    margin-left: 50px;
 }
+
 .largeProductCard {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .largeProductCard img {
@@ -100,13 +118,42 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap : 20px;
+    gap: 20px;
 }
+
 .imgAndName {
     width: 400px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: left;
-    gap : 20px;
+    gap: 20px;
 }
+
+.columnTitles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.cartTotalUpRight {
+    margin-right: 20px;
+    padding: 5px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    float: right;
+    border: 1px solid black;
+}
+
+.bottomRight {
+    float: right;
+    text-align: right;
+}
+.validateCartButton {
+max-width: 200px;
+    align-self: flex-end;
+}
+

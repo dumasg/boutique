@@ -15,3 +15,12 @@ function fakeCart()
         9 => 1
     ] ;
 }
+
+function totalCart($products, $cartList)
+{
+    $total = 0;
+    foreach ($products as $product) {
+           $total += $product['price_ttc'] * $cartList[$product['id']];
+    }
+    return [$total, sizeof($products)];
+}

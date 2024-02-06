@@ -8,10 +8,21 @@
 require '../ressources/views/layouts/header.tpl.php';
 ?>
 
+    <div class="cartTotalUpRight">
+        <div> Panier:
+            <?php
+            echo $cartTotal[1] . " produit";
+            echo $cartTotal[1] > 1 ? 's ' : ' ';
+            echo $cartTotal[0] . ' €'
+            ?>
+            <p style="margin-bottom: 0px;text-align: center">Voir le panier</p>
+        </div>
+    </div>
+
     <h2 id="cartTitle">Panier</h2>
 
     <div class="cartListTopBox">
-        <div class="largeProductCard"  style="font-weight: bold">
+        <div class="columnTitles" style="font-weight: bold">
             <p class="imgAndName"></p>
             <p>Prix unitaire</p>
             <p>Quantité</p>
@@ -32,7 +43,7 @@ require '../ressources/views/layouts/header.tpl.php';
 
                 <p><?= $cartList[$product['id']] . " " ?></p>
 
-                <p><?= $product['price_ttc'] * $cartList[$product['id']] ?> € TTC</p>
+                <p><?= $product['price_ttc'] * $cartList[$product['id']] ?> €</p>
 
             </div>
 
@@ -40,6 +51,11 @@ require '../ressources/views/layouts/header.tpl.php';
         }
         ?>
 
+        <p class="bottomRight">Total <?=$cartTotal[0]?> €</p>
+
+        <button class="validateCartButton" onclick="window.location.href='';">
+            Valider le panier
+        </button>
     </div>
 
 

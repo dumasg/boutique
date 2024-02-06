@@ -20,7 +20,8 @@ $metaDescription = "Site de vente de poisson";
 <body>
 
 <header>
-    <h1>Les petits pois sont rouges</h1>
+
+    <h1>Fish lover</h1>
     <nav>
         <a href="/">Home</a>
         <a href="/?action=buy">Acheter du poisson</a>

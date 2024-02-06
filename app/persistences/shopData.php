@@ -34,8 +34,3 @@ function getCartProducts(PDO $pdo, $prodIdList)
     /* Returns an array of product items, so use fetchAll : */
     return $pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
 }
-
-function productTotalsCart()
-{
-
-}
