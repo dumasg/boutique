@@ -4,7 +4,7 @@
 include '../config/database.php';
 
 $routes = [
-    "product"   => '../app/controllers/showController.php',
+    "product"   => '../app/controllers/showProductController.php',
     "cart"      => '../app/controllers/cartController.php',
 ];
 

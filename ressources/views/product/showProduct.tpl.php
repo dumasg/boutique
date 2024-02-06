@@ -11,9 +11,16 @@ require '../ressources/views/layouts/header.tpl.php';
                 <?= $product['description'] ?>
                 <div class="priceAndButton">
                     <p><?= $product['price_ttc'] ?> € TTC</p>
-                    <button onclick="window.location.href='';">
-                        Ajouter au panier
-                    </button>
+
+                    <form action="/index.php?action=cart" method="post">
+
+                        <input type="hidden" value="<?=$productId?>" name="productId" />
+                        <div class="button">
+                            <button type="submit">Ajouter au panier</button>
+                        </div>
+
+                    </form>
+
                 </div>
             </div>
         </div>

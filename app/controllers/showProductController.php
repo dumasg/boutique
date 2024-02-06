@@ -6,5 +6,5 @@ $product = getProduct($pdo, $productId);
 
 // Afficher la page produit :
 
-require '../ressources/views/product/show.php';
+require '../ressources/views/product/showProduct.tpl.php';
 

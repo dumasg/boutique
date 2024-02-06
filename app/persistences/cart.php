@@ -2,8 +2,9 @@
 function initCart()
 {
     session_start();
-    $_SESSION['cart'] = null;
-    // permettra d'utiliser : $_SESSION[‘cart’]
+    if (! isset($_SESSION['cart'])) {
+         $_SESSION['cart'] = null;
+    }
 }
 
 function fakeCart()
@@ -23,4 +24,14 @@ function totalCart($products, $cartList)
            $total += $product['price_ttc'] * $cartList[$product['id']];
     }
     return [$total, sizeof($products)];
+}
+
+function addProductCart($id)
+{
+    if (isset($_SESSION['cart'][$id])) {
+        // on a déjà ce produit dans le panier : on augmente juste sa quantité
+        $_SESSION['cart'][$id]++;
+    } else {
+        $_SESSION['cart'][$id] = 1;
+    }
 }

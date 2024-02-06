@@ -47,10 +47,11 @@ footer {
 }
 
 .priceAndButton {
+    display: flex;
+    align-items: center;
     font-size: x-large;
     color: red;
     margin-top: 50px;
-    display: flex;
     gap: 50px;
 }
 
