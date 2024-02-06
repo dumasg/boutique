@@ -10,7 +10,7 @@
     <?php
     foreach ($productsCart as $data) :
         foreach ($_SESSION["cart"] as $value) :
-            if ($data["id"] === $value["id"]) : ?>
+            if ($data["id"] == $value["id"]) : ?>
                 <div class="cart__product_content">
                     <div class="cart__product_picture">
                         <img src="<?= $data["path_img"] ?>" alt="iPhone" />
