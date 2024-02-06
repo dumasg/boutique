@@ -2,11 +2,11 @@
 function initCart()
 {
     if (!isset($_SESSION["cart"])) {
-        $_SESSION["cart"] = array();
+        $_SESSION["cart"] = [];
     }
 
     if (!isset($_SESSION["totalCart"])) {
-        $_SESSION["totalCart"] = array();
+        $_SESSION["totalCart"] = [];
     }
 }
 
@@ -18,10 +18,10 @@ function fakeCart($db, $int)
     ON po.products_id = p.id
     WHERE po.orders_id = '$int'";
 
-    $arr = array();
+    $arr = [];
 
     foreach ($db->query($query) as $data) {
-        array_push($arr, $data);
+        array_push($arr, ["id" => $data["id"], "quantity" => $data["quantity"]]);
     }
 
     return $arr;
@@ -44,4 +44,32 @@ function totalCart($db, $session)
     }
 
     return $arr;
+}
+
+function addProductCart($id, $quantity)
+{
+    $isExists = false;
+    if (!empty($id) && !empty($quantity)) {
+        for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
+            if ($id == $_SESSION["cart"][$i]["id"]) {
+                $isExists = true;
+                break;
+            }
+        }
+
+        for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
+            if (!$isExists) {
+                array_push($_SESSION["cart"], ["id" => $id, "quantity" => $quantity]);
+                $_SESSION["cart"][$i]["quantity"] += $quantity;
+                break;
+            } else {
+                if ($id == $_SESSION["cart"][$i]["id"]) {
+                    $_SESSION["cart"][$i]["quantity"] += $quantity;
+                    break;
+                }
+            }
+        }
+
+        header("Location: index.php?action=cart");
+    }
 }
