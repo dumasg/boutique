@@ -3,7 +3,7 @@ function getAllProducts($db) {
     $query = "SELECT *
     FROM products";
     
-    $arr = array();
+    $arr = [];
 
     foreach ($db->query($query) as $data) {
         array_push($arr, $data);
@@ -17,7 +17,7 @@ function getProduct($db, $product_id) {
     FROM products 
     WHERE products.id = '$product_id'";
     
-    $arr = array();
+    $arr = [];
 
     foreach ($db->query($query) as $data) {
         array_push($arr, $data);
