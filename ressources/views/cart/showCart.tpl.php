@@ -23,16 +23,18 @@ require '../ressources/views/layouts/header.tpl.php';
 
     <h2 id="cartTitle">Panier</h2>
 
-    <div >
-
-        <div class="columnTitles" style="font-weight: bold">
-            <p class="imgAndName"></p>
-            <p>Prix unitaire</p>
-            <p>Quantité</p>
-            <p>Total</p>
-        </div>
+    <div>
 
         <form class="cartListTopBox" action="/index.php?action=cart" method="post">
+
+            <div class="columnTitles" style="font-weight: bold">
+                <p class="imgAndName"></p>
+                <p>Prix unitaire</p>
+                <p>Quantité</p>
+                <p>Supprimer</p>
+                <p>Total</p>
+            </div>
+
 
             <?php
             foreach ($products as $product) {
@@ -52,7 +54,16 @@ require '../ressources/views/layouts/header.tpl.php';
                         <input class="quantityBox"
                                type="number" step="1"
                                name="newCart[<?= $product['id'] ?>]"
-                               value="<?=$cartList[$product['id']]?>"/>
+                               value="<?= $cartList[$product['id']] ?>"/>
+                    </p>
+
+                    <p>
+                        <button class="deleteProduct"
+                                type="submit"
+                                name="deleteCart[<?= $product['id'] ?>]"
+                                value="true">
+                            X
+                        </button>
                     </p>
 
                     <!-- Prix total du produit : -->

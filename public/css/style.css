@@ -13,6 +13,9 @@ h2 {
 }
 
 nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     border-top: blue 2px solid;
     border-bottom: blue 2px solid;
     padding-top: 20px;

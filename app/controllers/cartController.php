@@ -10,8 +10,11 @@ initCart();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $productId = filter_input(INPUT_POST, 'productId', FILTER_VALIDATE_INT);
+    $deleteCart = filter_input(INPUT_POST, 'deleteCart', FILTER_VALIDATE_BOOL, FILTER_REQUIRE_ARRAY);
     if (isset($productId)) {
         addProductCart($productId);
+    } elseif (isset($deleteCart)) {
+        deleteProductCart($deleteCart);
     } else {
         $newCart = filter_input(INPUT_POST, 'newCart',
             FILTER_VALIDATE_INT,

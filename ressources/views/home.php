@@ -6,7 +6,7 @@
 require '../ressources/views/layouts/header.tpl.php';
 ?>
 
-    <h2 id="lastProductsTitle">Nos derniers produits</h2>
+    <h2 id="lastProductsTitle">Nos poissons du jour</h2>
 
     <div class="productListTopBox">
         <?php

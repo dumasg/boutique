@@ -50,3 +50,12 @@ function updateProductCart($newCart)
         }
     }
 }
+
+function deleteProductCart($deleteCart)
+{
+    foreach ($deleteCart as $id => $deleteBool) {
+        if ($deleteBool) {
+            unset($_SESSION['cart'][$id]);
+        }
+    }
+}
