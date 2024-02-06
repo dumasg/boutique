@@ -7,32 +7,39 @@
         </a>
     </div>
     <h2>Panier</h2>
-    <?php for ($i = 0; $i < count($products); $i++) : ?>
-    <div class="cart__product_content">
-        <div class="cart__product_picture">
-            <img src="<?= $products[$i]["path_img"] ?>" alt="iPhone" />
-            <img src="img/product/iphone-xr.png" alt="iPhone" />
-        </div>
-        <div class="cart__product_detail">
-            <div class="cart__product_name">
-                <p>NAME</p>
-                <p><?= $products[$i]["name"] ?></p>
-            </div>
-            <div class="cart__product_unit_price">
-                <p>UNIT PRICE</p>
-                <p><?= $products[$i]["price_ht"] ?>€</p>
-            </div>
-            <div class="cart__product_quantity">
-                <p>QUANTITY</p>
-                <p><?= $products[$i]["quantity"] ?></p>
-            </div>
-            <div class="cart__product_total_price">
-                <p>TOTAL PRICE</p>
-                <p><?= $products[$i]["price_tva"] ?>€ TTC</p>
-            </div>
-        </div>
+    <?php
+    foreach ($productsCart as $data) :
+        foreach ($_SESSION["cart"] as $value) :
+            if ($data["id"] === $value["id"]) : ?>
+                <div class="cart__product_content">
+                    <div class="cart__product_picture">
+                        <img src="<?= $data["path_img"] ?>" alt="iPhone" />
+                    </div>
+                    <div class="cart__product_detail">
+                        <div class="cart__product_name">
+                            <p>NAME</p>
+                            <p><?= $data["name"] ?></p>
+                        </div>
+                        <div class="cart__product_unit_price">
+                            <p>UNIT PRICE</p>
+                            <p><?= $data["price_ht"] ?>€</p>
+                        </div>
+                        <div class="cart__product_quantity">
+                            <p>QUANTITY</p>
+                            <p><?= $value["quantity"] ?></p>
+                        </div>
+                        <div class="cart__product_total_price">
+                            <p>TOTAL PRICE</p>
+                            <p><?= $data["price_ttc"] ?>€ TTC</p>
+                        </div>
+                    </div>
+                </div>
+    <?php endif;
+        endforeach;
+    endforeach; ?>
+    <div class="cart__total_price">
+        <p><span>TOTAL</span><?= $_SESSION["totalCart"]["price_ttc"] ?>€ TTC</p>
     </div>
-    <?php endfor; ?>
     <form action="" method="post">
         <input type="submit" value="VALIDATE CART" />
     </form>
