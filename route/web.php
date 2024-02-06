@@ -21,6 +21,7 @@ if (array_search($route, $routeArray) !== false){
     require ("../config/database.php");
     require ("../app/persistences/boutiquePostData.php");
     require ("../app/persistences/command.php");
+    require ("../app/persistences/connection.php");
     require ("../ressources/views/layouts/header.tpl.php");
     require("../app/controllers/" . $routeArray[$i] . "Controller.php");
     require ("../ressources/views/layouts/footer.tpl.php");

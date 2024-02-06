@@ -156,3 +156,23 @@ a:hover {
     display: flex;
     justify-content: flex-end;
 }
+
+.container_form_connexion{
+    margin: 100px auto;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #707070;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.div_form{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.alter_no_connection{
+    color: red;
+}

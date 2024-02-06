@@ -29,12 +29,15 @@
                         <a class="nav-link" href="/">Tendance</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <button class="btn btn-primary me-3" type="submit">Connexion</button>
-                </form>
 
-                <button onclick="window.location.href='?action=cart'" class="btn btn-success" type="submit">Panier</button>
-
+                <?php if (isset($_COOKIE['autoConnection'])){ ?>
+                    <button onclick="window.location.href='?action=cart'" class="btn btn-success me-3" type="submit">Panier</button>
+                    <button onclick="window.location.href='?action=deconnection'" class="btn btn-danger me-3" type="submit">Déconnexion</button>
+                <?php }else{ ?>
+                    <button onclick="window.location.href='?action=signup'" class="btn btn-primary me-3" type="submit">Connexion</button>
+                    <button onclick="window.location.href='?action=login'" class="btn btn-primary me-3" type="submit">Inscription</button>
+                    <button onclick="window.location.href='?action=cart'" class="btn btn-success" type="submit">Panier</button>
+                <?php } ?>
             </div>
         </div>
     </nav>
