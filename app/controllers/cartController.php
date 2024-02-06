@@ -14,10 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }else{
         $testing = checkingDoublon($dataArticle);
         if ($testing){
-            echo "j'ai passé le test". PHP_EOL;
             mergeDoublon($dataArticle);
         }else{
-            echo "j'ai pas passé le test". PHP_EOL;
             addOnCart($dataArticle);
         }
     }
@@ -85,6 +83,3 @@ function mergeDoublon (array $dataArticle){
     }
 }
 
-function deleteProductCart(){
-
-}
