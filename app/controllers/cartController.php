@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    header("Location: /?action=product&id=" . $dataArticle['id']);
+    header("Location: /");
     exit();
 } else {
     if (isset($_GET['delete'])){

@@ -5,23 +5,27 @@
         </div>
         <div class="container_content_product">
             <div>
-                <h1><?= $article['name'] ?></h1>
+                <div>
+                    <h1><?= $article['name'] ?></h1>
+                </div>
+                <div>
+                    <p><?= $article['description'] ?></p>
+                </div>
+                <div class="container_product_price">
+                    <p>Prix TTC : <?= $article['price_ttc'] ?> €</p>
+                    <span>Prix HT :  <?= $article['price_ht'] ?> €</span>
+                </div>
             </div>
-            <div>
-                <p><?= $article['description'] ?></p>
-            </div>
-            <div class="container_product_price">
-                <p>Prix TTC : <?= $article['price_ttc'] ?> €</p>
-                <span>Prix HT :  <?= $article['price_ht'] ?> €</span>
-            </div>
+
             <form action="?action=cart" method="post" class="container_product_form">
                 <div class="container_product_qte">
                     <label for="qte">Quantité</label>
                     <input type="number" name="qte" id="qte">
                 </div>
-                <input type="hidden" name="id" id="id" value="<?= $article['id'] ?>">
                 <div>
+                    <input type="hidden" name="id" id="id" value="<?= $article['id'] ?>">
                     <button class="btn btn-primary" type="submit">Ajouter au panier</button>
+                </div>
             </form>
         </div>
     </div>

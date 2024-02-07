@@ -1,14 +1,21 @@
-<?php ?>
+<div class="container_form_connexion">
+    <form action="/?action=login" method="post">
+        <?php if (isset($_GET['connection']) && $_GET['connection'] == 'failed'){ ?>
+            <div>
+                <h4 class="alter_no_connection">Impossible de vous connectez ! Vérifiez votre email et votre mot de passe</h4>
+            </div>
+        <?php } ?>
 
-<div class="mb-3 row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-    </div>
-</div>
-<div class="mb-3 row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword">
-    </div>
+        <div class="div_form">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email">
+        </div>
+        <div class="div_form">
+            <label for="password">Mot de passe</label>
+            <input id="password" name="password" type="password">
+        </div>
+        <div>
+            <button class="btn btn-primary">Connexion</button>
+        </div>
+    </form>
 </div>

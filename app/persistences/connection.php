@@ -1,6 +1,6 @@
 <?php
 
-function signup(PDO $pdo, $dataUser): array|false
+function login(PDO $pdo, $dataUser): array|false
 {
     $queryForConnection = "
         SELECT id, name, email, pwd
@@ -25,4 +25,8 @@ function signup(PDO $pdo, $dataUser): array|false
         return false;
     }
 
+}
+
+function autoLogin(PDO $pdo){
+    return "test";
 }

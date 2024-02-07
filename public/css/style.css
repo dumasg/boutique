@@ -12,15 +12,17 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
-    align-items: center;
 }
 
 .card {
-    max-width: 400px;
-/ / max-height: 500 px;
+    width: 300px;
     padding: 10px;
     border: 1px solid;
+    margin: 50px;
+
+    .card_body{
+        margin-top: 30px;
+    }
 
     .card_img {
         width: 300px;
@@ -34,10 +36,7 @@
     }
 
     .call_to_action_product {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        margin-top: 30px;
 
         > p {
             margin: 0px !important;
@@ -71,6 +70,10 @@ a:hover {
 
     .container_content_product {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 100%;
         margin-left: 30px;
         .container_product_price {
             > span {
@@ -79,14 +82,13 @@ a:hover {
             }
         }
         .container_product_form{
-            position: absolute;
-            bottom: 0px;
             display: flex;
             flex-direction: column;
             width: 200px;
             .container_product_qte{
                 display: flex;
                 flex-direction: column;
+                margin: 20px 0;
             }
             input{
                 width: 70px;
