@@ -26,9 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // $cartList contains a list of : (id => qty) :
 $cartList = $_SESSION['cart'] ;
 
-$ids = array_keys($cartList);
-$products = getCartProducts($pdo, $ids);
-$cartTotal = totalCart($products, $cartList); // array : total(€), nbProducts
+if (isset($cartList)) {
+    $ids = array_keys($cartList);
+    $products = getCartProducts($pdo, $ids);
+    $cartTotal = totalCart($products, $cartList); // array : total(€), nbProducts
+}
 
 // Display cart : will use the contents of :
 // - $cartList (id => qty)

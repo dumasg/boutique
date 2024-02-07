@@ -2,7 +2,7 @@
 erDiagram
     customer ||--o{ orders: places
     customer {
-        int id
+        int id PK
         string email
         string pwd
         string name
@@ -11,7 +11,7 @@ erDiagram
    
     products ||--o{ products_orders: places
     products {
-        int id
+        int id PK
         string name
         string description
         int stock
@@ -26,17 +26,17 @@ erDiagram
 
     tva ||--o{ products: places
     tva {
-        int id
+        int id PK
         float rate_tva
     }
     categories ||--o{ products: places
     categories {
-        int id
+        int id PK
         string name
     }
     orders ||--o{ products_orders: places
     orders {
-        int id
+        int id PK
         string number
         date date_order
         date date_delivery

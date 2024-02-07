@@ -112,6 +112,18 @@ button {
     padding-top: 10px;
 }
 
+.columnTitles p {
+    width: 15%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.largeProductCard p {
+    width: 15%;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .largeProductCard img {
     width: 4em;
     height: 4em;
@@ -126,7 +138,7 @@ button {
 }
 
 .imgAndName {
-    width: 400px;
+    width: 40%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -167,4 +179,18 @@ button {
 
 .quantityBox {
     width: 50px;
+}
+
+.emptyCart {
+    text-align: center;
+    font-weight: bold;
+    color: blueviolet;
+    font-size: xx-large;
+}
+
+.validateButton {
+    background: orange;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
 }

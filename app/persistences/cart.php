@@ -2,7 +2,7 @@
 function initCart()
 {
     session_start();
-    if (!isset($_SESSION['cart'])) {
+    if (!isset($_SESSION['cart']) || sizeof($_SESSION['cart'])==0) {
         $_SESSION['cart'] = null;
     }
 }

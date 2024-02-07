@@ -6,6 +6,7 @@ include '../config/database.php';
 $routes = [
     "product"   => '../app/controllers/productController.php',
     "cart"      => '../app/controllers/cartController.php',
+    "command"   => '../app/controllers/commandController.php',
 ];
 
 $p = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_FULL_SPECIAL_CHARS);

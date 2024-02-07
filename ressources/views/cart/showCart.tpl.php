@@ -8,6 +8,8 @@
 require '../ressources/views/layouts/header.tpl.php';
 ?>
 
+    <?php if (isset($cartList)) { ?>
+
     <div class="cartTotalUpRight">
         <div> Panier:
             <?php
@@ -28,10 +30,10 @@ require '../ressources/views/layouts/header.tpl.php';
         <form class="cartListTopBox" action="/index.php?action=cart" method="post">
 
             <div class="columnTitles" style="font-weight: bold">
-                <p class="imgAndName"></p>
+                <div class="imgAndName"></div>
                 <p>Prix unitaire</p>
                 <p>Quantité</p>
-                <p>Supprimer</p>
+                <p>Suppr.</p>
                 <p>Total</p>
             </div>
 
@@ -44,7 +46,7 @@ require '../ressources/views/layouts/header.tpl.php';
                     <div class="imgAndName">
                         <img src="<?= $product['path_img'] ?>"/>
                         <a href="?action=product&id=<?= $product['id'] ?>">
-                            <p>  <?= $product["name"] ?></p>
+                            <?= $product["name"] ?>
                         </a>
                     </div>
                     <p><?= $product['price_ttc'] . " " ?>€</p>
@@ -80,16 +82,20 @@ require '../ressources/views/layouts/header.tpl.php';
 
             <div class="CartButtons">
                 <button type="submit">Mettre à jour le panier</button>
-
-                <button onclick="window.location.href='';">
-                    Valider le panier
-                </button>
             </div>
         </form>
 
+        <button class="validateButton" onclick="window.location.href = '/index.php?action=command';">
+            Valider le panier
+        </button>
+
     </div>
 
+    <?php } else { ?>
+        <p class="emptyCart"> VOTRE PANIER EST VIDE ! </p>
+    <?php }?>
 
-<?php
+
+        <?php
 require '../ressources/views/layouts/footer.tpl.php';
 ?>
