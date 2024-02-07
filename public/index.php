@@ -1,4 +1,4 @@
-<?php 
- echo 'serveur mis en place' 
- ?> 
- <h1>Test</h1>
+<?php
+require ('../bootstrap/app.php');
+
+require ("../route/web.php");
