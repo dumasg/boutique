@@ -1,4 +1,3 @@
-global $oneProduct; ?>
 <body>
 
 <section>
@@ -15,6 +14,9 @@ global $oneProduct; ?>
                 <div class="p-3 text-primary-emphasis text-center mt-3 mb-5">
                 </div>
                 <div class="row">
+                    <div>
+                        <input type="hidden" name ='id' value="<?=$product['id']?>">
+                    </div>
                     <div>
                         <label for="quantity" class="form-label">Quantité</label>
                         <input type="number" class="form-control" name="quantity" id="quantity">

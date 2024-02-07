@@ -1,11 +1,12 @@
 <?php
 global $pdo;
-echo 'cartController';
+global $quantity;
+global $productId;
 require("../app/persistences/cartData.php");
 require("../app/persistences/productsData.php");
 
 initCart();
-fakeCart();
+//fakeCart();
 
 $cart = [
 //    0=>['id' => 3,
@@ -21,17 +22,26 @@ $cart = [
 //        'totalPrice' => 0,
 //    ]
 ];
-
-foreach ($_SESSION['cart'] as $cartLine){
-    $productId = $cartLine['idProduct'];
-    $product = getProduct($pdo, $productId);
-    $cart[]=[
-        'id' => $productId,
-        'name' => $product['name'],
-        'price' => $product['price_ttc'],
-        'quantity' => $cartLine['quantity'],
-        'totalPrice' => ($product['price_ttc'] * $cartLine['quantity']),
-    ];
+if (isset($_POST['id'])){
+    var_dump($_POST);
+    $selectQuantity = $_POST['quantity'];
+    $id = $_POST['id'];
+//fonction ajouter un article
+    addProductCart($id, $selectQuantity);
 }
+
+//boucle pour chaque produit ajouter au panier ($cartLine), afficher ($cart) et calculer le prix total
+//foreach ($_SESSION['cart'] as $cartLine){ var_dump($cartLine);
+//    $productId = $cartLine['idProduct'];
+//    $product = getProduct($pdo, $productId);
+//    $cart[]=[
+//        'id' => $productId,
+//        'name' => $product['name'],
+//        'price' => $product['price_ttc'],
+//        'quantity' => $cartLine['quantity'],
+//        'totalPrice' => ($product['price_ttc'] * $cartLine['quantity']),
+//    ];
+//}
+
 
 require("../ressources/views/cart/cart.tpl.php");

@@ -1,5 +1,4 @@
 <?php
-echo 'productsData';
 global $pdo;
 global $productsId;
 

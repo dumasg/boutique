@@ -1,5 +1,4 @@
-<?php echo 'cart.tpl';
-global $product; ?>
+<?php global $product; ?>
 
 <h2 id="cartTitle">Panier</h2>
 <?php foreach ($cart as $cartLine):?>
