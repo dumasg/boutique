@@ -22,7 +22,7 @@ if (array_search($route, $routeArray) !== false){
 
 }else{
     require ("../ressources/views/layouts/header.tpl.php");
-    require ("../ressources/views/errors/404.php");
+    require ("../ressources/views/errors/notfound.php");
     require ("../ressources/views/layouts/footer.tpl.php");
 
 }
