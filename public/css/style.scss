@@ -312,7 +312,7 @@ header {
                     padding-top: 50px;
                     margin-bottom: 50px;
 
-                    &:nth-of-type(2) {
+                    &:nth-of-type(1) {
                         border-top: none;
                         padding-top: 0;
                     }
@@ -363,33 +363,47 @@ header {
                 }
 
                 &_name p, &_unit_price p, &_quantity p, &_total_price p {
+                    font-size: 12px;
                     text-align: end;
                 }
 
-                > form {
-                    display: flex;
-                    justify-content: flex-end;
+                &_quantity {
+                    align-items: flex-end;
+                    
+                    input[type="number"] {
+                        border: 1px solid black;
+                        border-radius: 7.5px;
+                        font-size: 12px;
+                        height: 25px;
+                        position: relative;
+                        text-align: center;
+                        top: 5px;
+                        width: 75px;
+                        }
+                }
 
-                    input {
+                > form[class="updateCart"], > form[class="validateCart"] {
+                    input[type="submit"] {
+                        background: black;
+                        border: none;
+                        border-radius: 50px;
+                        color: white;
                         font-size: 20px;
-
-                        &[type="submit"] {
-                            background: black;
-                            border: none;
-                            border-radius: 50px;
-                            color: white;
                             height: 50px;
                             width: 250px;
                         }
-                    }
-                    }
                 }
+
+                > form[class="validateCart"] {
+                    display: flex;
+                    justify-content: flex-end;
+                    }
 
                 &__total_price {
                     align-items: center;
                     display: flex;
                     height: 100px;
-                    justify-content: flex-end;
+                    justify-content: space-between;
                     margin-bottom: 50px;
 
                     >p {
@@ -402,6 +416,16 @@ header {
                         }
                     }
                 }
+
+                .empty {
+                    align-items: center;
+                    display: flex;
+                    font-size: 32px;
+                    font-weight: bold;
+                    height: 500px;
+                    justify-content: center;
+                }
+            }
     }
 
     .return-btn {
